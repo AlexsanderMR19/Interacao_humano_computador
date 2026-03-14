@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ConstraintLayout permite layouts responsivos -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <!-- Texto principal da interface -->
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Requisitos de Usabilidade (UX)"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Campo: nome do app (ajuda a compor o documento) -->
+
+    <!-- Campo: tarefa principal do usuário (base para requisitos) -->
+
+    <EditText
+        android:id="@+id/edtNomeApp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="Nome do app (ex: Tech Pizzaria)"
+        android:inputType="textCapWords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitulo" />
+
+    <EditText
+        android:id="@+id/edtTarefaPrincipal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Tarefa principal do usuário (ex: Fazer um pedido)"
+        android:inputType="textMultiLine"
+        android:minLines="2"
+        android:gravity="top"
+        app:layout_constraintTop_toBottomOf="@id/edtNomeApp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Campo: requisito de eficácia (o usuário consegue concluir?) -->
+    <EditText
+        android:id="@+id/edtEficacia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Requisito de EFICÁCIA (ex: concluir sem ajuda)"
+        android:inputType="textMultiLine"
+        android:minLines="2"
+        android:gravity="top"
+        app:layout_constraintTop_toBottomOf="@id/edtTarefaPrincipal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Campo: requisito de eficiência (tempo/cliques) -->
+    <EditText
+        android:id="@+id/edtEficiencia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Requisito de EFICIÊNCIA (ex: ≤ 60s e ≤ 6 cliques)"
+        android:inputType="textMultiLine"
+        android:minLines="2"
+        android:gravity="top"
+        app:layout_constraintTop_toBottomOf="@id/edtEficacia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Campo: requisito de satisfação (percepção do usuário) -->
+    <EditText
+        android:id="@+id/edtSatisfacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Requisito de SATISFAÇÃO (ex: nota ≥ 8/10)"
+        android:inputType="textMultiLine"
+        android:minLines="2"
+        android:gravity="top"
+        app:layout_constraintTop_toBottomOf="@id/edtEficiencia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Campo: acessibilidade básica (texto, contraste, toque, feedback) -->
+    <EditText
+        android:id="@+id/edtAcessibilidade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Acessibilidade (ex: fonte ≥ 16sp, botões grandes, labels)"
+        android:inputType="textMultiLine"
+        android:minLines="2"
+        android:gravity="top"
+        app:layout_constraintTop_toBottomOf="@id/edtSatisfacao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Botão grande (melhor toque); ação clara (mundo real) -->
+    <Button
+        android:id="@+id/btnGerarDocumento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Gerar Documento UX"
+        app:layout_constraintTop_toBottomOf="@id/edtAcessibilidade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Resultado: área de feedback (visibilidade do status do sistema) -->
+    <TextView
+        android:id="@+id/txtDocumento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Seu documento UX aparecerá aqui..."
+        android:textSize="15sp"
+        android:padding="12dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/btnGerarDocumento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
